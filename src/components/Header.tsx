@@ -1,4 +1,4 @@
-import { Menu } from "lucide-react";
+import { Menu, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import {
@@ -22,17 +22,26 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 right-0 z-50 p-6">
-      <Sheet>
-        <SheetTrigger asChild>
-          <Button 
-            variant="outline" 
-            size="icon"
-            className="bg-spa-brown/90 backdrop-blur-sm border-gold/30 hover:bg-spa-dark/90 hover:border-gold shadow-elegant"
-          >
-            <Menu className="h-6 w-6 text-gold" />
-          </Button>
-        </SheetTrigger>
+    <header className="fixed top-0 left-0 right-0 z-50">
+      <div className="flex items-center justify-between p-4 bg-spa-brown/95 backdrop-blur-sm border-b border-gold/20">
+        <a 
+          href="tel:+919818931148" 
+          className="flex items-center gap-2 text-gold hover:text-gold/80 transition-smooth"
+        >
+          <Phone className="h-5 w-5" />
+          <span className="text-sm md:text-base font-semibold">+91 98189 31148</span>
+        </a>
+        
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button 
+              variant="outline" 
+              size="icon"
+              className="bg-spa-dark/90 backdrop-blur-sm border-gold/30 hover:bg-spa-dark hover:border-gold shadow-elegant"
+            >
+              <Menu className="h-6 w-6 text-gold" />
+            </Button>
+          </SheetTrigger>
         <SheetContent className="bg-spa-brown border-l-gold/30 z-[100]">
           <SheetHeader>
             <SheetTitle className="text-gold text-2xl">Menu</SheetTitle>
@@ -54,7 +63,8 @@ const Header = () => {
             ))}
           </nav>
         </SheetContent>
-      </Sheet>
+        </Sheet>
+      </div>
     </header>
   );
 };
