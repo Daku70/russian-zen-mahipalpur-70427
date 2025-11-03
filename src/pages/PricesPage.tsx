@@ -1,10 +1,18 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
+import SEO from "@/components/SEO";
 
 const PricesPage = () => {
   return (
-    <main className="min-h-screen bg-background">
+    <>
+      <SEO 
+        title="Spa Prices & Packages - Affordable Luxury | Russian Spa NCR"
+        description="Transparent pricing for premium spa services. Russian Banya ₹3,500, Deep Tissue ₹2,500, Couples Package ₹5,500. Best value in NCR. Call +91 98189 31148"
+        keywords="spa prices delhi, massage rates ncr, russian banya cost, affordable spa packages, luxury spa deals mahipalpur"
+        canonical="https://russianspacentre.lovable.app/prices"
+      />
+      <main className="min-h-screen bg-background">
       <Header />
       <div className="pt-20 min-h-screen">
         <section className="py-20 px-4">
@@ -92,7 +100,8 @@ const PricesPage = () => {
       </div>
       <Footer />
       <FloatingCallButton />
-    </main>
+      </main>
+    </>
   );
 };
 

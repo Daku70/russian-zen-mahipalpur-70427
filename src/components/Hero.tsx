@@ -13,7 +13,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" aria-label="Hero section">
       <div 
         className="absolute inset-0 z-0"
         style={{
@@ -22,14 +22,18 @@ const Hero = () => {
           backgroundPosition: "center",
           filter: "brightness(0.4)"
         }}
+        role="img"
+        aria-label="Luxurious spa treatment room with relaxing ambiance"
       />
       
       <div className="container mx-auto px-4 z-10 text-center">
         <div className="max-w-4xl mx-auto">
           <img 
             src={logo} 
-            alt="Russian Spa Centre Logo" 
+            alt="Russian Spa Centre - Premier Spa in NCR, Mahipalpur Delhi"
+            title="Russian Spa Centre - Authentic Russian Banya & Luxury Spa Treatments" 
             className="w-full max-w-2xl mx-auto mb-8 animate-fade-in"
+            loading="eager"
           />
           
           <p className="text-xl md:text-2xl text-spa-cream mb-8 animate-fade-in-delay font-light tracking-wide">

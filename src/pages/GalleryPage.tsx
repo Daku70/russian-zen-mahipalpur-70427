@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
+import SEO from "@/components/SEO";
 import banyaImg from "@/assets/banya.jpg";
 import massageImg from "@/assets/massage.jpg";
 import deepTissueImg from "@/assets/deep-tissue.jpg";
@@ -21,8 +22,15 @@ const GalleryPage = () => {
   ];
 
   return (
-    <main className="min-h-screen bg-background">
-      <Header />
+    <>
+      <SEO 
+        title="Gallery - Luxury Spa Facilities | Russian Spa Centre NCR"
+        description="View our premium spa facilities, treatment rooms, and authentic Russian Banya. Experience luxury and tranquility at NCR's finest spa centre in Mahipalpur."
+        keywords="spa gallery, luxury spa photos, russian banya images, spa facilities ncr, wellness centre gallery"
+        canonical="https://russianspacentre.lovable.app/gallery"
+      />
+      <main className="min-h-screen bg-background">
+        <Header />
       <div className="pt-20 min-h-screen">
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-7xl">
@@ -67,7 +75,8 @@ const GalleryPage = () => {
       </div>
       <Footer />
       <FloatingCallButton />
-    </main>
+      </main>
+    </>
   );
 };
 
