@@ -1,5 +1,6 @@
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import {
   Sheet,
   SheetContent,
@@ -9,18 +10,15 @@ import {
 } from "@/components/ui/sheet";
 
 const Header = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: "smooth" });
-  };
+  const navigate = useNavigate();
 
   const menuItems = [
-    { label: "Home", action: () => window.scrollTo({ top: 0, behavior: "smooth" }) },
-    { label: "About Us", action: () => scrollToSection("why-choose-us") },
-    { label: "Services", action: () => scrollToSection("services") },
-    { label: "Prices", action: () => scrollToSection("services") },
-    { label: "Gallery", action: () => scrollToSection("services") },
-    { label: "Contact Us", action: () => scrollToSection("booking") },
+    { label: "Home", path: "/" },
+    { label: "About Us", path: "/about" },
+    { label: "Services", path: "/services" },
+    { label: "Prices", path: "/prices" },
+    { label: "Gallery", path: "/gallery" },
+    { label: "Contact Us", path: "/contact" },
   ];
 
   return (
@@ -46,7 +44,7 @@ const Header = () => {
                 variant="ghost"
                 className="justify-start text-lg text-spa-cream hover:text-gold hover:bg-spa-dark/50 transition-smooth"
                 onClick={() => {
-                  item.action();
+                  navigate(item.path);
                   // Close the sheet after clicking
                   document.body.click();
                 }}
